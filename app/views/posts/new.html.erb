@@ -4,6 +4,8 @@
         <div class="form">
             <div class="form-body">
                 <%= form_tag("/posts/create") do %>
+                <input type="radio" name="is_record" value="true">記録
+                <input type="radio" name="is_record" value="false">目標
                 <textarea name="post"  cols="30" rows="10"></textarea>
                 <input type="submit" value="登録">
                 <% end %>
