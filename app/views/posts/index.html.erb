@@ -3,11 +3,30 @@
 
     <div class="target">
         <p>目標</p>
-        <%= @target.date %>
+        <%= @targets.size %>
+        <% @targets.each do |target| %>
+        <ul>
+            <li>
+            <h4> <%= target.date%> の目標</h4>
+            腕立て：<%= target.push_up %> <br>
+            腹筋： <%= target.sit_up %> <br>
+            3000m走： <%= target.run %> <br>
+            </li>
+        </ul>
+        <% end %>
     </div>
     <div class="records">
         <p>記録</p>
-        <%= @record.date %>
-    
+        <%= @records.size %>
+        <% @records.each do |record| %>
+        <ul>
+            <li>
+            <h4> <%= record.date %> の記録</h4>
+            腕立て： <%= record.push_up %><br>
+            腹筋：<%= record.sit_up %><br>
+            3000m走：<%= record.run %><br>
+            </li>
+        </ul>
+        <% end %>
     </div>
 </div>
