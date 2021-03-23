@@ -4,6 +4,9 @@
         <div class="form">
             <div class="form-body">
                 <h1>記録／目標の登録</h1>
+                <% @post.errors.full_messages.each do|message| %>
+                    <%= message %>
+                <% end %>
                 <%= form_tag("/posts/create") do %>
                 <p>
                 <input type="radio" name="is_record" value="1">記録

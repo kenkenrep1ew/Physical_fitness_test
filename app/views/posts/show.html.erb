@@ -1,0 +1,15 @@
+<div class="top-main">
+    <h1>記録・目標の詳細ページ</h1>
+    <div class="target">
+        <ul>
+            <li>
+            <h4> <%= @post.date%> の目標</h4>
+            腕立て：<%= @post.push_up %> <br>
+            腹筋： <%= @post.sit_up %> <br>
+            3000m走： <%= @post.run %> <br>
+            </li>
+        </ul>
+        <%= link_to("修正する","/posts/#{@post.id}/edit")%>
+    </div>
+    <%= link_to("戻る",'/posts/index') %>
+</div>

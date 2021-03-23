@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def new
-  
+    @post = Post.new
   end
 
   def create
@@ -15,8 +15,26 @@ class PostsController < ApplicationController
                      sit_up: params[:sit_up],
                      run: run,
                      is_record: params[:is_record])
-    @post.save
-    redirect_to('/posts/index')
+    if @post.save
+      msg = ""
+      if params[:is_record] == 1
+        msg = "記録"
+      else
+        msg = "目標"
+      end
+      flash[:notice] = msg + "の登録に成功しました"
+      redirect_to('/posts/index')
+    else
+      redirect_to('/posts/new')
+    end
+  end
+
+  def show 
+    @id = params[:id]
+    @post = Post.find_by(id: @id)
+  end
+
+  def edit
   end
 
 end

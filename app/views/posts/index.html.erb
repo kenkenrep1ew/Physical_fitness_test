@@ -1,32 +1,34 @@
 <div class="top-main">
     <h1> posts/index </h1>
 
-    <div class="target">
-        <p>目標</p>
-        <%= @targets.size %>
+    <div class="targets">
+        <p>目標 <%= @targets.size %>件</p>
         <% @targets.each do |target| %>
-        <ul>
-            <li>
-            <h4> <%= target.date%> の目標</h4>
-            腕立て：<%= target.push_up %> <br>
-            腹筋： <%= target.sit_up %> <br>
-            3000m走： <%= target.run %> <br>
-            </li>
-        </ul>
+        <div class="target">
+            <ul>
+                <li>
+                <h4><%=link_to(" #{target.date} の目標","/posts/#{target.id}") %></h4>
+                腕立て：<%= target.push_up %> <br>
+                腹筋： <%= target.sit_up %> <br>
+                3000m走： <%= target.run %> <br>
+                </li>
+            </ul>
+        </div>
         <% end %>
     </div>
     <div class="records">
-        <p>記録</p>
-        <%= @records.size %>
+        <p>記録 <%= @records.size %>件</p>
         <% @records.each do |record| %>
-        <ul>
-            <li>
-            <h4> <%= record.date %> の記録</h4>
-            腕立て： <%= record.push_up %><br>
-            腹筋：<%= record.sit_up %><br>
-            3000m走：<%= record.run %><br>
-            </li>
-        </ul>
+        <div class="record">
+            <ul>
+                <li>
+                <h4> <%= record.date %> の記録</h4>
+                腕立て： <%= record.push_up %><br>
+                腹筋：<%= record.sit_up %><br>
+                3000m走：<%= record.run %><br>
+                </li>
+            </ul>
+        </div>
         <% end %>
     </div>
 </div>
