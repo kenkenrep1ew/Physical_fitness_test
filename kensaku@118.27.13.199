@@ -1,0 +1,9 @@
+[user]
+	name = kenkenrep1ew
+	email = kenken.rep.1ew@gmail.com
+[core]
+	editor = code --wait
+[merge]
+	tool = code --wait \"$MERGED\"
+[push]
+	default = simple

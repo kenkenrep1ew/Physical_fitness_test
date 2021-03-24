@@ -13,8 +13,8 @@
 
                 <%= form_tag("/posts/create") do %>
                 <p>
-                <input type="radio" name="is_record" value="1">記録
                 <input type="radio" name="is_record" value="0">目標
+                <input type="radio" name="is_record" value="1">記録
                 </p>
                 <p>日　　付： <input type="date" name="date" value="<%= Date.today.strftime("%Y-%m-%d") %>"></p>
                 <p>腕 立 て：<input type="number" name="push_up">回</p>
