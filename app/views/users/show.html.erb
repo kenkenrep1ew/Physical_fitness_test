@@ -1,0 +1,49 @@
+<div class="top-main">
+    <h1>ユーザ登録情報</h1>
+    <div class="target">
+        <ul>
+            <li>
+            <h4> 名前：<%= @user.name %></h4>
+            年齢：<%= @user.age %>歳<br>
+            身長：<%= @user.height %>cm<br>
+            体重：<%= @user.weight %>kg<br>
+            </li>
+        </ul>
+        <% if @current_user.id == @user.id %>
+            <%= link_to("修正する","/users/#{@user.id}/edit")%>
+        <% end %>
+            
+        <div class="targets">
+            <p>目標 <%= @targets.size %>件</p>
+            <% @targets.each do |target| %>
+            <div class="target">
+                <ul>
+                    <li>
+                    <h4><%=link_to(" #{target.date} の目標","/posts/#{target.id}") %></h4>
+                    腕立て：<%= target.push_up %>回 <br>
+                    腹筋： <%= target.sit_up %>回 <br>
+                    3000m走： <%= target.run_min %>分<%= target.run_sec %>秒 <br>
+                    </li>
+                </ul>
+            </div>
+            <% end %>
+        </div>
+        <div class="records">
+            <p>記録 <%= @records.size %>件</p>
+            <% @records.each do |record| %>
+            <div class="record">
+                <ul>
+                    <li>
+                    <h4><%=link_to(" #{record.date} の記録","/posts/#{record.id}") %></h4>
+                    腕立て： <%= record.push_up %>回<br>
+                    腹筋：<%= record.sit_up %>回<br>
+                    3000m走：<%= record.run_min %>分<%= record.run_sec %>秒<br>
+                    </li>
+                </ul>
+            </div>
+            <% end %>
+        </div>
+
+    </div>
+
+</div>

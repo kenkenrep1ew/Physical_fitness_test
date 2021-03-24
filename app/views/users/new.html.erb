@@ -1,0 +1,23 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">新規ユーザー登録</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+        
+        <%= form_tag("/users/create") do %>
+        <p>名前：<input type="text" name="name" value="" placeholder="久里浜　太郎"></p>
+        <p>パスワード：<input type="password" name="password" value=""></p><br><br>
+        <p>年齢：<input type="number" name="age" value="" placeholder="20">歳</p>
+        <p>身長：<input type="number" name="height" value="" placeholder="170">cm</p>
+        <p>体重：<input type="number" name="weight" value="" placeholder="60">kg</p>
+        <input type="submit" value="登録">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

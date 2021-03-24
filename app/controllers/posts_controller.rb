@@ -14,11 +14,12 @@ class PostsController < ApplicationController
                      sit_up: params[:sit_up],
                      run_min: params[:run_min],
                      run_sec: params[:run_sec],
-                     is_record: params[:is_record])
+                     is_record: params[:is_record],
+                     user_id: @current_user.id)
     if @post.save
       msg = record_or_target(@post.is_record)
       flash[:notice] = msg + "の登録に成功しました"
-      redirect_to('/posts/index')
+      redirect_to("/users/#{@current_user.id}")
     else
       render('posts/new')
     end
@@ -44,8 +45,8 @@ class PostsController < ApplicationController
     @post.run_sec = params[:run_sec]
     if @post.save
       msg = record_or_target(@post.is_record)
-      flash[:notice] = msg + "の修正に成功しました"
-      redirect_to('/posts/index')
+      flash[:notice] = msg + "を修正しました"
+      redirect_to("/users/#{@current_user.id}")
     else
       render("posts/#{@post.id}/edit")
     end

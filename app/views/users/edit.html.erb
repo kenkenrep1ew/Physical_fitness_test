@@ -1,0 +1,24 @@
+<div class="top-main">
+    <div class="container">
+        <div class="form">
+            <div class="form-body">
+                <h1>ユーザ登録情報の変更</h1>
+
+                <% @user.errors.full_messages.each do|message| %>
+                    <div class="form-error">
+                        <%= message %>
+                    </div>
+                <% end %>
+
+                <%= form_tag("/users/#{@user.id}/update") do %>
+                <p>名前：<input type="text" name="name" value="<%= @user.name %>"></p>
+                <p>パスワード：<input type="password" name="password" value="<%= @user.password %>"></p><br><br>
+                <p>年齢：<input type="number" name="age" value="<%= @user.age %>">歳</p>
+                <p>身長：<input type="number" name="height" value="<%= @user.height %>">cm</p>
+                <p>体重：<input type="number" name="weight" value="<%= @user.weight %>">kg</p>
+                <input type="submit" value="修正">
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
