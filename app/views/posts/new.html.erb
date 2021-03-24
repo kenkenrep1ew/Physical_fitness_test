@@ -4,14 +4,19 @@
         <div class="form">
             <div class="form-body">
                 <h1>記録／目標の登録</h1>
+
                 <% @post.errors.full_messages.each do|message| %>
-                    <%= message %>
+                    <div class="form-error">
+                        <%= message %>
+                    </div>
                 <% end %>
+
                 <%= form_tag("/posts/create") do %>
                 <p>
                 <input type="radio" name="is_record" value="1">記録
                 <input type="radio" name="is_record" value="0">目標
                 </p>
+                <p>日　　付： <input type="date" name="date" value="<%= Date.today.strftime("%Y-%m-%d") %>"></p>
                 <p>腕 立 て：<input type="number" name="push_up">回</p>
                 <p>腹　　筋：<input type="number" name="sit_up">回</p>
                 <p>3000m走：<input type="number" name="run_min">分<input type="number" name="run_sec">秒</p>

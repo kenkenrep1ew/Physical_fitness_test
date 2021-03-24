@@ -1,15 +1,16 @@
 <div class="top-main">
-    <h1>記録・目標の詳細ページ</h1>
+    <h1><%= @msg %>の詳細</h1>
     <div class="target">
         <ul>
             <li>
             <h4> <%= @post.date%> の目標</h4>
-            腕立て：<%= @post.push_up %> <br>
-            腹筋： <%= @post.sit_up %> <br>
-            3000m走： <%= @post.run %> <br>
+            腕立て：<%= @post.push_up %>回<br>
+            腹筋： <%= @post.sit_up %>回<br>
+            3000m走： <%= @post.run_min %>分<%= @post.run_sec %>秒 <br>
             </li>
         </ul>
         <%= link_to("修正する","/posts/#{@post.id}/edit")%>
+        <%= link_to("削除する","/posts/#{@post.id}/destroy",{method: "post"})%>
     </div>
     <%= link_to("戻る",'/posts/index') %>
 </div>

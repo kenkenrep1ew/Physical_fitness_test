@@ -1,3 +1,28 @@
 <div class="top-main">
-    <h1>編集ページ</h1>
+    
+</div>
+
+<div class="main posts-new">
+    <div class="container">
+        <div class="form">
+            <div class="form-body">
+                <h1><%= @post.date%>の<%= @msg %>の修正</h1>
+
+                <% @post.errors.full_messages.each do|message| %>
+                    <div class="form-error">
+                        <%= message %>
+                    </div>
+                <% end %>
+
+                <%= form_tag("/posts/#{@post.id}/update") do %>
+
+                <p>腕 立 て：<input type="number" name="push_up" value="<%= @post.push_up %>">回</p>
+                <p>腹　　筋：<input type="number" name="sit_up" value="<%= @post.sit_up %>">回</p>
+                <p>3000m走：<input type="number" name="run_min" value="<%= @post.run_min %>">分
+                            <input type="number" name="run_sec" value="<%= @post.run_sec %>">秒</p>
+                <input type="submit" value="修正">
+                <% end %>
+            </div>
+        </div>
+    </div>
 </div>

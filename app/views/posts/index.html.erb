@@ -8,9 +8,9 @@
             <ul>
                 <li>
                 <h4><%=link_to(" #{target.date} の目標","/posts/#{target.id}") %></h4>
-                腕立て：<%= target.push_up %> <br>
-                腹筋： <%= target.sit_up %> <br>
-                3000m走： <%= target.run %> <br>
+                腕立て：<%= target.push_up %>回 <br>
+                腹筋： <%= target.sit_up %>回 <br>
+                3000m走： <%= target.run_min %>分<%= target.run_sec %>秒 <br>
                 </li>
             </ul>
         </div>
@@ -22,10 +22,10 @@
         <div class="record">
             <ul>
                 <li>
-                <h4> <%= record.date %> の記録</h4>
-                腕立て： <%= record.push_up %><br>
-                腹筋：<%= record.sit_up %><br>
-                3000m走：<%= record.run %><br>
+                <h4><%=link_to(" #{record.date} の記録","/posts/#{record.id}") %></h4>
+                腕立て： <%= record.push_up %>回<br>
+                腹筋：<%= record.sit_up %>回<br>
+                3000m走：<%= record.run_min %>分<%= record.run_sec %>秒<br>
                 </li>
             </ul>
         </div>
