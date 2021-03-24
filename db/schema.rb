@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_24_015612) do
+ActiveRecord::Schema.define(version: 2021_03_24_030721) do
 
-# Could not dump table "posts" because of following StandardError
-#   Unknown type 'booleam' for column 'is_record'
+  create_table "posts", force: :cascade do |t|
+    t.date "date"
+    t.integer "push_up"
+    t.integer "sit_up"
+    t.string "run"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "is_record"
+    t.integer "run_min"
+    t.integer "run_sec"
+  end
 
 end
