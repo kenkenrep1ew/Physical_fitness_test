@@ -12,10 +12,15 @@
                 <% end %>
 
                 <%= form_tag("/posts/create") do %>
-                <p>
-                <input type="radio" name="is_record" value="0">目標
-                <input type="radio" name="is_record" value="1">記録
-                </p>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="is_record" id="option1" autocomplete="off" checked="" value="0"> 目標
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="is_record" id="option2" autocomplete="off" value="1"> 記録
+                    </label>
+                </div>
+                <br>
                 <p>日　　付： <input type="date" name="date" value="<%= Date.today.strftime("%Y-%m-%d") %>"></p>
                 <p>腕 立 て：<input type="number" name="push_up">回</p>
                 <p>腹　　筋：<input type="number" name="sit_up">回</p>
@@ -26,3 +31,4 @@
         </div>
     </div>
 </div>
+

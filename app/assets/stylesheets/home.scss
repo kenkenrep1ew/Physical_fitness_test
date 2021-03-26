@@ -8,9 +8,14 @@ nav {
   background-color: blanchedalmond;
 }
 
+ul, li {
+  list-style-type: none;
+}
+
+
 /* フラッシュ ================================ */
 .flash {
-  padding: 10px 0;
+  padding: 5px 0;
   color: white;
   background: rgb(135, 173, 113);
   text-align: center;

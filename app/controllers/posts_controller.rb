@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user,{only: [:index, :update]}
   def index
     @records = Post.where(is_record: true)
     @targets = Post.where(is_record: false)

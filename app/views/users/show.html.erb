@@ -1,57 +1,59 @@
 <div class="user-main">
-
     <div class="container">
-        <ul>
-            <li>
-            <h4> 名前：<%= @user.name %></h4>
-            <p>年齢：<%= @user.age %>歳 </p>
-            身長：<%= @user.height %>cm 
-            体重：<%= @user.weight %>kg 
-            </li>
-        </ul>
-        <% if @current_user.id == @user.id %>
-            <%= link_to("ユーザ情報を修正する","/users/#{@user.id}/edit")%>
-        <% end %>
+        <div class="user-card">
+            <h4><%= @user.name %></h4>
+            <p>年齢：<%= @user.age %>歳 / 身長：<%= @user.height %>cm / 体重：<%= @user.weight %>kg </p>
+            <% if @current_user.id == @user.id %>
+            <%= link_to("ユーザ情報を修正する","/users/#{@user.id}/edit", class: "btn btn-primary")%>
+            <% end %>
+        </div>
+
             
         <div class="targets">
-            <p>目標 <%= @targets.size %>件</p>
+            <div class="targets-title">目標 <%= @targets.size %>件</div>
             <% if @targets.size == 0 %>
                 まだ登録されている目標がありません。次回のチャレンジに向けて目標を登録しましょう。
             <% else %>
                 <% @targets.each do |target| %>
                     <div class="target">
-                        <ul>
-                            <li>
-                            <h4><%=link_to(" #{target.date} の目標","/posts/#{target.id}") %></h4>
-                            腕立て：<%= target.push_up %>回 <br>
-                            腹筋： <%= target.sit_up %>回 <br>
-                            3000m走： <%= target.run_min %>分<%= target.run_sec %>秒 <br>
-                            </li>
-                        </ul>
+                        <div class="card target-card">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <%=link_to(" #{target.date} の目標","/posts/#{target.id}") %>
+                                </h4>
+                                <p class="card-text">
+                                    腕立て：<%= target.push_up %>回 <br>
+                                    腹筋： <%= target.sit_up %>回 <br>
+                                    3000m走： <%= target.run_min %>分<%= target.run_sec %>秒 
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 <% end %>
             <% end %>
         </div>
         <div class="records">
-            <p>記録 <%= @records.size %>件</p>
+            <div class="targets-title">記録 <%= @records.size %>件</div>
             <% if @records.size == 0 %>
                 まだ登録されている記録がありません。前回のチャレンジの記録を登録しましょう。
             <% else %>
                 <% @records.each do |record| %>
                     <div class="record">
-                        <ul>
-                            <li>
-                            <h4><%=link_to(" #{record.date} の記録","/posts/#{record.id}") %></h4>
-                            腕立て： <%= record.push_up %>回<br>
-                            腹筋：<%= record.sit_up %>回<br>
-                            3000m走：<%= record.run_min %>分<%= record.run_sec %>秒<br>
-                            </li>
-                        </ul>
+                        <div class="card record-card">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <%=link_to(" #{record.date} の記録","/posts/#{record.id}") %>
+                                </h4>
+                                <p class="card-text">
+                                    腕立て： <%= record.push_up %>回<br>
+                                    腹筋：<%= record.sit_up %>回<br>
+                                    3000m走：<%= record.run_min %>分<%= record.run_sec %>秒
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 <% end %>
             <% end %>    
         </div>
-
     </div>
-
 </div>
