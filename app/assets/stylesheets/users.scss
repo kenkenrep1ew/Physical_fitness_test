@@ -27,7 +27,7 @@
 }
 
 .target-card {
-    height: 180px;
+    height: 170px;
     margin-top: 8px;
     margin-bottom: 8px;
     p {
@@ -36,10 +36,22 @@
 }
 
 .record-card {
-    height: 180px;
+    height: 170px;
     margin-top: 8px;
     margin-bottom: 8px;
     p {
         font-size: 20px;
+    }
+}
+
+h6{
+    font-size: 16px;
+}
+
+.new-record {
+    text-align: center;
+    .btn {
+        margin-left: auto;
+        margin-right: auto;
     }
 }

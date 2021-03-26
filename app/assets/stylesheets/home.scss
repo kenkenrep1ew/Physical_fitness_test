@@ -4,7 +4,7 @@
 // 指定したCSSを貼り付けてください
 /* reset ================================ */
 
-nav {
+.nav {
   background-color: blanchedalmond;
 }
 
@@ -12,6 +12,9 @@ ul, li {
   list-style-type: none;
 }
 
+.wrapper {
+
+}
 
 /* フラッシュ ================================ */
 .flash {
@@ -25,4 +28,15 @@ ul, li {
   width: 100%;
   border-radius: 0 0 2px 2px;
   font-size: 14px;
+}
+
+footer {
+  padding-top: 2px;
+
+  text-align: right;
+  background-color: #f8f9fa;
+  h6 {
+    font-size: 5px;
+    margin-right: 10px;
+  }
 }

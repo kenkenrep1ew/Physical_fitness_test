@@ -28,6 +28,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @records = Post.where(is_record: true, user_id: @user.id)
     @targets = Post.where(is_record: false, user_id: @user.id)
+    @counter = 0
   end
 
   def edit

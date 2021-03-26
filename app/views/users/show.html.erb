@@ -11,49 +11,113 @@
             
         <div class="targets">
             <div class="targets-title">目標 <%= @targets.size %>件</div>
-            <% if @targets.size == 0 %>
-                まだ登録されている目標がありません。次回のチャレンジに向けて目標を登録しましょう。
-            <% else %>
-                <% @targets.each do |target| %>
-                    <div class="target">
-                        <div class="card target-card">
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <%=link_to(" #{target.date} の目標","/posts/#{target.id}") %>
-                                </h4>
-                                <p class="card-text">
-                                    腕立て：<%= target.push_up %>回 <br>
-                                    腹筋： <%= target.sit_up %>回 <br>
-                                    3000m走： <%= target.run_min %>分<%= target.run_sec %>秒 
-                                </p>
+                <div id="carouselExampleSlidesOnly" class="carousel slide" id="carousel2" data-ride="carousel"　data-interval="9000">
+                    <div class="carousel-inner">
+                        <% if @targets.size == 0 %>
+                            <div class="carousel-item px-2 active">
+                                <div class="card target-card">
+                                    <div class="card-body">
+                                        <p>まだ登録されている目標がありません。次回のチャレンジに向けて目標を登録しましょう。
+                                        </p>
+                                    </div>
+                                </div>  
                             </div>
-                        </div>
+                        <% else %>
+                            <% @targets.each do |target| %>
+                                <% if @counter == 0 %>
+                                    <div class="carousel-item px-2 active">
+                                        <div class="card record-card">
+                                            <div class="card-body">
+                                                <h4 class="card-title">
+                                                    <%=link_to(" #{target.date} の目標","/posts/#{target.id}") %>
+                                                </h4>
+                                                <p class="card-text">
+                                                    腕立て：<%= target.push_up %>回 <br>
+                                                    腹筋： <%= target.sit_up %>回 <br>
+                                                    3000m走： <%= target.run_min %>分<%= target.run_sec %>秒 
+                                                </p>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                    <% @counter = 1 %>
+                                <% else %>
+                                    <div class="carousel-item px-2">
+                                        <div class="card record-card">
+                                            <div class="card-body">
+                                                <h4 class="card-title">
+                                                    <%=link_to(" #{target.date} の目標","/posts/#{target.id}") %>
+                                                </h4>
+                                                <p class="card-text">
+                                                    腕立て：<%= target.push_up %>回 <br>
+                                                    腹筋： <%= target.sit_up %>回 <br>
+                                                    3000m走： <%= target.run_min %>分<%= target.run_sec %>秒 
+                                                </p>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                <% end %>
+                            <% end %>    
+                            <% @counter = 0%>
+                        <% end %>
                     </div>
-                <% end %>
-            <% end %>
+                </div>
         </div>
         <div class="records">
             <div class="targets-title">記録 <%= @records.size %>件</div>
-            <% if @records.size == 0 %>
-                まだ登録されている記録がありません。前回のチャレンジの記録を登録しましょう。
-            <% else %>
-                <% @records.each do |record| %>
-                    <div class="record">
-                        <div class="card record-card">
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <%=link_to(" #{record.date} の記録","/posts/#{record.id}") %>
-                                </h4>
-                                <p class="card-text">
-                                    腕立て： <%= record.push_up %>回<br>
-                                    腹筋：<%= record.sit_up %>回<br>
-                                    3000m走：<%= record.run_min %>分<%= record.run_sec %>秒
-                                </p>
+                <div id="carouselExampleSlidesOnly" class="carousel slide" id="carousel2" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <% if @records.size == 0 %>
+                            <div class="carousel-item px-2 active">
+                                <div class="card target-card">
+                                    <div class="card-body">
+                                        <a href="/posts/new">まだ登録されている記録がありません。今回のチャレンジが終わったら記録を登録しましょう。
+                                        </a>
+                                    </div>
+                                </div>  
                             </div>
-                        </div>
+                        <% else %>
+                            <% @records.each do |record| %>
+                                <% if @counter == 0 %>
+                                    <div class="carousel-item px-2 active">
+                                        <div class="card record-card">
+                                            <div class="card-body">
+                                                <h4 class="card-title">
+                                                    <%=link_to(" #{record.date} の記録","/posts/#{record.id}") %>
+                                                </h4>
+                                                <p class="card-text">
+                                                    腕立て：<%= record.push_up %>回 <br>
+                                                    腹筋： <%= record.sit_up %>回 <br>
+                                                    3000m走： <%= record.run_min %>分<%= record.run_sec %>秒 
+                                                </p>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                    <% @counter = 1 %>
+                                <% else %>
+                                    <div class="carousel-item px-2">
+                                        <div class="card record-card">
+                                            <div class="card-body"  id="cards">
+                                                <h4 class="card-title">
+                                                    <%=link_to(" #{record.date} の記録","/posts/#{record.id}") %>
+                                                </h4>
+                                                <p class="card-text">
+                                                    腕立て：<%= record.push_up %>回 <br>
+                                                    腹筋： <%= record.sit_up %>回 <br>
+                                                    3000m走： <%= record.run_min %>分<%= record.run_sec %>秒 
+                                                </p>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                <% end %>
+                            <% end %> 
+                        <% end %>
                     </div>
-                <% end %>
-            <% end %>    
+                </div>    
         </div>
+
+        <div class="new-record">
+            <%= link_to("目標・記録を登録する","/users/#{@user.id}/edit", class: "btn btn-primary")%>
+        </div>
+        
     </div>
 </div>
