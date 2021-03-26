@@ -5,48 +5,51 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <header>
-      <div class="header-logo">
-        <a href="/">Phy</a>
+<!-- ナビゲーションバー -->    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="/">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <!-- ドロップダウンタイプ -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown link
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
       </div>
-      <ul class="header-menus">
-
-
-        <% if session[:user_id] %>
-        <li>
-          <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
-        </li>
-        <li>
-          <%= link_to("目標・記録の登録", "/posts/new")%>
-        </li>
-        <li>
-          <%= link_to("公開ユーザ","/users/index")%>
-        </li>
-        <li>
-          <%= link_to("公開記録","/posts/index")%>
-        </li>
-        <li>
-          <%= link_to("ログアウト","/logout", {method: "post"})%>
-        </li>
-        <% else %>
-        <li>
-          <%= link_to("新規ユーザ登録","/signup")%>
-        </li>         
-        <li>
-          <%= link_to("ログイン","/login")%>
-        </li>    
-        <% end %>
-
-        <li>
-          <%= link_to("このサービスについて","/about")%>
-        </li>
-      </ul>
-    </header>
+    </nav>
 
     <% if flash[:notice] %>
       <div class="flash">
