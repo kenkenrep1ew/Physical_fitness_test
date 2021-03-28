@@ -18,4 +18,11 @@ class ApplicationController < ActionController::Base
             redirect_to("/users/#{@current_user.id}")
         end
     end
+
+    def only_admin_user
+        if @current_user.id != 1
+            flash[:notice] = "権限がありません"
+            redirect_to("/users/#{@current_user.id}")
+        end
+    end           
 end

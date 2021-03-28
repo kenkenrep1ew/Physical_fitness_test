@@ -1,33 +1,70 @@
 
-<div class="main posts-new">
+<div class="posts-main posts-new">
     <div class="container">
-        <div class="form">
-            <div class="form-body">
-                <h1>記録／目標の登録</h1>
+        <h2>記録／目標の登録</h2>
 
-                <% @post.errors.full_messages.each do|message| %>
-                    <div class="form-error">
-                        <%= message %>
-                    </div>
-                <% end %>
-
-                <%= form_tag("/posts/create") do %>
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                        <input type="radio" name="is_record" id="option1" autocomplete="off" checked="" value="0"> 目標
-                    </label>
-                    <label class="btn btn-secondary">
-                        <input type="radio" name="is_record" id="option2" autocomplete="off" value="1"> 記録
-                    </label>
-                </div>
-                <br>
-                <p>日　　付： <input type="date" name="date" value="<%= Date.today.strftime("%Y-%m-%d") %>"></p>
-                <p>腕 立 て：<input type="number" name="push_up">回</p>
-                <p>腹　　筋：<input type="number" name="sit_up">回</p>
-                <p>3000m走：<input type="number" name="run_min">分<input type="number" name="run_sec">秒</p>
-                <input type="submit" value="登録">
-                <% end %>
+        <% @post.errors.full_messages.each do|message| %>
+            <div class="form-error">
+                <%= message %>
             </div>
+        <% end %>
+        <div class="form-body">
+            <%= form_tag("/posts/create") do %>
+            <div class="btn-group btn-group-toggle radio-button" data-toggle="buttons">
+                <label class="btn btn-primary active">
+                    <input type="radio" name="is_record" id="option1" autocomplete="off" checked="" value="0"> 目標
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="is_record" id="option2" autocomplete="off" value="1"> 記録
+                </label>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4 col-label">
+                        <label>日付：</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="date" name="date" value="<%= Date.today.strftime("%Y-%m-%d") %>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4 col-label">
+                        <label>腕立て：</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="number" name="push_up">回
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4 col-label">
+                        <label>腹筋：</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="number" name="sit_up">回
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4 col-label">
+                        <label>3000m走：</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" name="run_min" class="col-8">分
+                    </div>
+                    <div class="col-4">
+                        <input type="number" name="run_sec" class="col-8">秒
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                    <input type="submit" value="登 録" class="btn btn-primary">
+            </div>   
+            <% end %>
         </div>
     </div>
 </div>

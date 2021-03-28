@@ -5,6 +5,8 @@
 
 .user-main {
     margin-top: 87px;
+
+    text-align: center;
   }
 
 .user-card {
@@ -53,5 +55,20 @@ h6{
     .btn {
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+.zero-card {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    a {
+        vertical-align: middle;
+    }
+}
+
+.target-container {
+    .col-5 {
+        text-align: right;
     }
 }

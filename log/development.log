@@ -14083,3 +14083,1296 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 181ms (Views: 174.6ms | ActiveRecord: 1.8ms)
 
 
+Started GET "/" for ::1 at 2021-03-27 13:56:36 +0900
+Processing by HomeController#top as HTML
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/users/1
+Filter chain halted as :forbid_login_user rendered or redirected
+Completed 302 Found in 49ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/users/1" for ::1 at 2021-03-27 13:56:36 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:79
+  Rendered users/show.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 350ms (Views: 313.7ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/users/1" for ::1 at 2021-03-27 14:00:56 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:79
+  Rendered users/show.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 2387ms (Views: 2379.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2021-03-27 14:01:01 +0900
+Processing by HomeController#top as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/users/1
+Filter chain halted as :forbid_login_user rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for ::1 at 2021-03-27 14:01:01 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:79
+  Rendered users/show.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 161ms (Views: 153.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2021-03-27 14:01:03 +0900
+Processing by HomeController#top as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/users/1
+Filter chain halted as :forbid_login_user rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2021-03-27 14:01:03 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:26
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:79
+  Rendered users/show.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 106ms (Views: 98.2ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/logout" for ::1 at 2021-03-27 14:01:08 +0900
+Processing by UsersController#logout as HTML
+  Parameters: {"authenticity_token"=>"xFDI3bXnuKJx7pFgOt47U2PLTynG6s9lXRbtISohoRQDk65nzHmcMm8gfpw7CW5u0fd20g/Lr2v0fxjEc7Di+g=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2021-03-27 14:01:08 +0900
+Processing by UsersController#login_form as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 126ms (Views: 118.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2021-03-27 14:01:17 +0900
+Processing by HomeController#top as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 103ms (Views: 87.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2021-03-27 14:01:22 +0900
+Processing by HomeController#top as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 73ms (Views: 68.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2021-03-27 14:01:27 +0900
+Processing by HomeController#top as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 120ms (Views: 116.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup" for ::1 at 2021-03-27 14:01:30 +0900
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 101ms (Views: 94.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-03-27 14:01:43 +0900
+Processing by HomeController#top as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 140ms (Views: 136.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-03-27 14:01:43 +0900
+Processing by HomeController#top as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 209ms (Views: 202.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2021-03-27 14:03:56 +0900
+Processing by HomeController#top as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2397ms (Views: 2393.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-03-27 14:04:50 +0900
+Processing by HomeController#top as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 72ms (Views: 67.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-03-27 14:05:20 +0900
+Processing by HomeController#top as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 74ms (Views: 68.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/signup" for ::1 at 2021-03-27 14:05:27 +0900
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 178ms (Views: 164.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/signup" for ::1 at 2021-03-27 14:05:52 +0900
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 93ms (Views: 89.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup" for ::1 at 2021-03-27 14:06:15 +0900
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 148ms (Views: 144.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for ::1 at 2021-03-27 14:06:35 +0900
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 90ms (Views: 83.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/signup" for ::1 at 2021-03-27 14:06:53 +0900
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 68ms (Views: 64.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup" for ::1 at 2021-03-27 14:07:33 +0900
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 114ms (Views: 109.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/create" for ::1 at 2021-03-27 14:08:42 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FhaI2Nh4PXLTUsxXmBGy6ZprYJl+l+J/x4yTvCrRigLR1e5ioeYZ4s2cI6uZxufUKFdZYre2gnFu5WZZc0DJ7A==", "name"=>"畑中　健作", "password"=>"[FILTERED]", "age"=>"34", "height"=>"174", "weight"=>"65"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "password", "age", "height", "weight", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "畑中　健作"], ["password", "aaa"], ["age", 34], ["height", 174], ["weight", 65], ["created_at", "2021-03-27 05:08:42.366415"], ["updated_at", "2021-03-27 05:08:42.366415"]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 15ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-27 14:08:42 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 174ms (Views: 167.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-27 14:10:45 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 112ms (Views: 106.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-27 14:12:17 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:71
+  Rendered users/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 1867ms (Views: 1859.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-27 14:15:05 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:71
+  Rendered users/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 1718ms (Views: 1709.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:15:31 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 118ms (Views: 113.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:16:03 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 109ms (Views: 105.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:16:46 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 81ms (Views: 76.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:21:23 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 69ms (Views: 65.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:23:09 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 1710ms (Views: 1706.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:24:14 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 185ms (Views: 180.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:24:38 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 1974ms (Views: 1970.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:31:13 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 138ms (Views: 132.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:31:47 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 86ms (Views: 82.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:41:19 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 103ms (Views: 100.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:42:09 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 119ms (Views: 114.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:47:47 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 2164ms (Views: 2160.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:48:22 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 69ms (Views: 65.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:49:33 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 1752ms (Views: 1749.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:50:10 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 1489ms (Views: 1483.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:51:18 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 1399ms (Views: 1394.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:51:45 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 1397ms (Views: 1394.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:52:31 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 1395ms (Views: 1390.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:53:03 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 1502ms (Views: 1498.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:56:37 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 1961ms (Views: 1955.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:56:50 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 119ms (Views: 114.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:57:50 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 2924ms (Views: 2919.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:58:15 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 89ms (Views: 85.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 14:59:27 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 111ms (Views: 107.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 15:00:39 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 139ms (Views: 136.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 15:01:17 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 83ms (Views: 78.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 15:02:08 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 101ms (Views: 96.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 15:02:30 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 127ms (Views: 123.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 15:02:38 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 101ms (Views: 96.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 15:02:59 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 113ms (Views: 109.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 15:04:32 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 127ms (Views: 120.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 15:05:37 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 2635ms (Views: 2628.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 15:05:59 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 141ms (Views: 137.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 15:06:29 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 109ms (Views: 104.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 15:08:33 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 144ms (Views: 140.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 15:10:20 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 108ms (Views: 105.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts/create" for ::1 at 2021-03-27 15:11:08 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J8ULL+ueD/MrutlMXF8pWCFfs0unt9TCk7m0dhOnhBDgBm2VkgArYzV0NrBdiHxlk2OKsG6WtMw60EGTSjbH/g==", "is_record"=>"0", "date"=>"2021-04-16", "push_up"=>"40", "sit_up"=>"45", "run_min"=>"12", "run_sec"=>"59"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("date", "push_up", "sit_up", "created_at", "updated_at", "is_record", "run_min", "run_sec", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2021-04-16"], ["push_up", 40], ["sit_up", 45], ["created_at", "2021-03-27 06:11:08.327461"], ["updated_at", "2021-03-27 06:11:08.327461"], ["is_record", 0], ["run_min", 12], ["run_sec", 59], ["user_id", 8]]
+  ↳ app/controllers/posts_controller.rb:20
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 15ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-27 15:11:08 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:71
+  Rendered users/show.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 213ms (Views: 201.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-27 15:12:26 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 95ms (Views: 88.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-27 15:13:09 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:71
+  Rendered users/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 123ms (Views: 116.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-27 15:16:34 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:77
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:80
+  Rendered users/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 147ms (Views: 140.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-27 15:18:44 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:77
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:80
+  Rendered users/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 127ms (Views: 120.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-27 15:20:32 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:77
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:80
+  Rendered users/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 110ms (Views: 103.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-27 15:20:55 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:77
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:80
+  Rendered users/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 1790ms (Views: 1783.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-27 15:23:56 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 115ms (Views: 105.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts/create" for ::1 at 2021-03-27 15:25:04 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RyLHHV5aH/d0n7aMNsqlhdtVLjG/QV4m2hgdBldMHiccIf3yYAcHzJLxknRcwwHJJL8HC608/yWHhgYTfZckUQ==", "is_record"=>"1", "date"=>"2021-03-26", "push_up"=>"21", "sit_up"=>"35", "run_min"=>"15", "run_sec"=>"00"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("date", "push_up", "sit_up", "created_at", "updated_at", "is_record", "run_min", "run_sec", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2021-03-26"], ["push_up", 21], ["sit_up", 35], ["created_at", "2021-03-27 06:25:04.754961"], ["updated_at", "2021-03-27 06:25:04.754961"], ["is_record", 1], ["run_min", 15], ["run_sec", 0], ["user_id", 8]]
+  ↳ app/controllers/posts_controller.rb:20
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 14ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-27 15:25:04 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:77
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:80
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:90
+  Rendered users/show.html.erb within layouts/application (66.9ms)
+Completed 200 OK in 207ms (Views: 195.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-27 15:26:13 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:77
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:80
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:90
+  Rendered users/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 95ms (Views: 88.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/8/edit" for ::1 at 2021-03-27 15:26:18 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 89ms (Views: 84.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/8/edit" for ::1 at 2021-03-27 15:26:42 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 74ms (Views: 68.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/8/edit" for ::1 at 2021-03-27 15:27:02 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (27.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 99ms (Views: 67.9ms | ActiveRecord: 27.1ms)
+
+
+Started GET "/users/8/edit" for ::1 at 2021-03-27 15:27:40 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 109ms (Views: 104.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/8/edit" for ::1 at 2021-03-27 15:28:54 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 1454ms (Views: 1448.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/8/edit" for ::1 at 2021-03-29 05:10:52 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 338ms (Views: 297.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/8/edit" for ::1 at 2021-03-29 05:14:17 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 90ms (Views: 84.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/8/edit" for ::1 at 2021-03-29 05:15:19 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 174ms (Views: 161.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/8/edit" for ::1 at 2021-03-29 05:16:25 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 95ms (Views: 89.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/8/edit" for ::1 at 2021-03-29 05:17:10 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 88ms (Views: 82.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/8/edit" for ::1 at 2021-03-29 05:17:41 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 96ms (Views: 90.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/8/edit" for ::1 at 2021-03-29 05:18:09 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 74ms (Views: 69.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/8/update" for ::1 at 2021-03-29 05:19:19 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jhJ+psRxbzDq+Xw7dQAPq/P+0xhN8hVyDsM7CM+bQK9J0Rgcve9LoPQ3k8d011qWQcLq44TTdXynqs7tlgoDQQ==", "name"=>"畑中　健作", "password"=>"[FILTERED]", "age"=>"34", "height"=>"174", "weight"=>"65", "id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:45
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 13ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-29 05:19:19 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:77
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:80
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:90
+  Rendered users/show.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 244ms (Views: 224.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2021-03-29 05:19:27 +0900
+Processing by HomeController#top as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/users/8
+Filter chain halted as :forbid_login_user rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-29 05:19:27 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:77
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:80
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:90
+  Rendered users/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 104ms (Views: 97.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/index" for ::1 at 2021-03-29 05:19:47 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 110ms (Views: 104.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/index" for ::1 at 2021-03-29 05:27:02 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/users/8
+Filter chain halted as :only_admin_user rendered or redirected
+Completed 302 Found in 46ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users/8" for ::1 at 2021-03-29 05:27:02 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:77
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:80
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 8]]
+  ↳ app/views/users/show.html.erb:90
+  Rendered users/show.html.erb within layouts/application (48.9ms)
+Completed 200 OK in 137ms (Views: 122.7ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/logout" for ::1 at 2021-03-29 05:27:13 +0900
+Processing by UsersController#logout as HTML
+  Parameters: {"authenticity_token"=>"1GdqUfgnDyxdHOT5OLMYgJNkfZn0ac1itWh1ijQV/pQTpAzrgbkrvEPSCwU5ZE29IVhEYj1IrWwcAYBvbYS9eg=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for ::1 at 2021-03-29 05:27:13 +0900
+Processing by UsersController#login_form as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 129ms (Views: 124.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2021-03-29 05:27:30 +0900
+Processing by UsersController#login_form as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 72ms (Views: 68.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for ::1 at 2021-03-29 05:27:55 +0900
+Processing by UsersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8OZWOFS+RWNjw/ivebfAudPg6gQdhkzSw6nEB5tl04I3JTCCLSBh830NF1N4YJWEYdzT/9SnLNxqwDHiwvSQbA==", "name"=>"Ken", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? AND "users"."password" = ? LIMIT ?[0m  [["name", "Ken"], ["password", "aaa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for ::1 at 2021-03-29 05:27:55 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:77
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:80
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:90
+  Rendered users/show.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 117ms (Views: 110.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/index" for ::1 at 2021-03-29 05:27:59 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 80ms (Views: 73.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for ::1 at 2021-03-29 05:28:05 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 0], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:77
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:80
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_record" = ? AND "posts"."user_id" = ?[0m  [["is_record", 1], ["user_id", 1]]
+  ↳ app/views/users/show.html.erb:90
+  Rendered users/show.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 199ms (Views: 192.7ms | ActiveRecord: 1.6ms)
+
+

@@ -2,3 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* posts/index ================================ */
+
+.posts-main {
+  margin-top: 87px;
+
+
+  text-align: center;
+
+
+}
+
+/* ======= new.html.erb ======== */
+.radio-button {
+  margin-top: 5px;
+  margin-bottom: 16px;
+}
+
+.form-body {
+  margin-top: 45px;
+  margin-bottom: 45px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border: 1px solid rgb(185, 183, 183);
+  border-radius: 5px;
+}
+
+.col-label {
+  text-align: right;
+}

@@ -30,11 +30,13 @@
               <%= link_to("目標・記録の登録", "/posts/new",class: "nav-link")%>
             </li>
             <li class="nav-item">
-              <%= link_to("公開記録","/posts/index",class: "nav-link")%>
-            </li>            
+              <%= link_to("全ての目標・記録","/posts/index",class: "nav-link")%>
+            </li>       
+            <% if session[:user_id] == 1 %>    
             <li class="nav-item">
-              <%= link_to("公開ユーザ","/users/index",class: "nav-link")%>
+              <%= link_to("全てのユーザ","/users/index",class: "nav-link")%>
             </li>
+            <% end %>
             <li class="nav-item">
               <%= link_to("ログアウト","/logout", {method: "post",class: "nav-link"})%>
             </li>

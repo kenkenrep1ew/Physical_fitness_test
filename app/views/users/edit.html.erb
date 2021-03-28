@@ -1,24 +1,67 @@
-<div class="top-main">
+<div class="user-main">
     <div class="container">
-        <div class="form">
-            <div class="form-body">
-                <h1>ユーザ登録情報の変更</h1>
+        <h2>ユーザ登録情報の変更</h2>
 
-                <% @user.errors.full_messages.each do|message| %>
-                    <div class="form-error">
-                        <%= message %>
-                    </div>
-                <% end %>
-
-                <%= form_tag("/users/#{@user.id}/update") do %>
-                <p>名前：<input type="text" name="name" value="<%= @user.name %>"></p>
-                <p>パスワード：<input type="password" name="password" value="<%= @user.password %>"></p><br><br>
-                <p>年齢：<input type="number" name="age" value="<%= @user.age %>">歳</p>
-                <p>身長：<input type="number" name="height" value="<%= @user.height %>">cm</p>
-                <p>体重：<input type="number" name="weight" value="<%= @user.weight %>">kg</p>
-                <input type="submit" value="修正">
-                <% end %>
+        <% @user.errors.full_messages.each do|message| %>
+            <div class="form-error">
+                <%= message %>
             </div>
+        <% end %>
+        <div class="form-body">
+        <%= form_tag("/users/#{@user.id}/update") do %>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-4 col-label">
+                    <label>名 前：</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" name="name" value="<%= @user.name %>">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-4 col-label">
+                    <label>ﾊﾟｽﾜｰﾄﾞ：</label>
+                </div>
+                <div class="col-8">
+                    <input type="password" name="password" value="<%= @user.password %>">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-4 col-label">
+                    <label>年 齢：</label>
+                </div>
+                <div class="col-8">
+                    <input type="number" name="age" value="<%= @user.age %>">歳
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-4 col-label">
+                    <label>身 長：</label>
+                </div>
+                <div class="col-8">
+                    <input type="number" name="height" value="<%= @user.height %>">cm
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-4 col-label">
+                    <label>体 重：</label>
+                </div>
+                <div class="col-8">
+                    <input type="number" name="weight" value="<%= @user.weight %>">kg
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="修正" class="btn btn-primary">
+        <% end %>
         </div>
     </div>
 </div>

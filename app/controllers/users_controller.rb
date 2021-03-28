@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user,{only: [:edit, :update]}
   before_action :forbid_login_user,{only: [:new, :create, :login_form, :login]}
+  before_action :only_admin_user,{only: [:index]}
   def index
     @users = User.all
   end
