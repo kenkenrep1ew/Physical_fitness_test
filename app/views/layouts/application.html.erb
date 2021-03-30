@@ -60,6 +60,13 @@
       <div class="flash">
         <%= flash[:notice]%>
       </div>
+      <script type="text/javascript">
+        $(function(){
+            $(".flash:not(:animated)").fadeIn("slow",function(){
+                $(this).delay(3000).fadeOut("slow");
+            });
+        });
+      </script>
     <%end%>
     <%= yield %>
     
