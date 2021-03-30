@@ -33,20 +33,11 @@
                                                 <h4 class="card-title">
                                                     <%=link_to(" #{target.date} の目標","/posts/#{target.id}") %>
                                                 </h4>
-                                                <div class="container target-container">
-                                                    <div class="row">
-                                                        <div class="col-5">腕立て：</div>
-                                                        <div class="col-7"><%= target.push_up %>回</div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-5">腹筋：</div>
-                                                        <div class="col-7"><%= target.sit_up %>回</div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-5">3000m走：</div>
-                                                        <div class="col-7"><%= target.run_min %>分<%= target.run_sec %>秒</div>
-                                                    </div>
-                                                </div>
+                                                <p class="card-text">
+                                                    腕立て：<%= target.push_up %>回 <br>
+                                                    腹筋： <%= target.sit_up %>回 <br>
+                                                    3000m走： <%= target.run_min %>分<%= target.run_sec %>秒 
+                                                </p>
                                             </div>
                                         </div>  
                                     </div>
