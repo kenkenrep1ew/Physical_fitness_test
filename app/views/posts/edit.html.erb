@@ -2,27 +2,67 @@
     
 </div>
 
-<div class="main posts-new">
+<div class="posts-main posts-new">
     <div class="container">
-        <div class="form">
-            <div class="form-body">
-                <h1><%= @post.date%>の<%= @msg %>の修正</h1>
-
-                <% @post.errors.full_messages.each do|message| %>
-                    <div class="form-error">
-                        <%= message %>
-                    </div>
-                <% end %>
-
-                <%= form_tag("/posts/#{@post.id}/update") do %>
-
-                <p>腕 立 て：<input type="number" name="push_up" value="<%= @post.push_up %>">回</p>
-                <p>腹　　筋：<input type="number" name="sit_up" value="<%= @post.sit_up %>">回</p>
-                <p>3000m走：<input type="number" name="run_min" value="<%= @post.run_min %>">分
-                            <input type="number" name="run_sec" value="<%= @post.run_sec %>">秒</p>
-                <input type="submit" value="修正">
-                <% end %>
+        <h3><%= @post.date%> <%= @msg %>の修正</h3>
+        <% @post.errors.full_messages.each do|message| %>
+            <div class="form-error">
+                <%= message %>
             </div>
+        <% end %>
+        <div class="form-body">
+            <%= form_tag("/posts/#{@post.id}/update") do %>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4 col-label">
+                        <label>日付：</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="date" name="date" value="<%= Date.today.strftime("%Y-%m-%d") %>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4 col-label">
+                        <label>腕立て：</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="number" name="push_up" value="<%= @post.push_up %>">回
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4 col-label">
+                        <label>腹筋：</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="number" name="sit_up" value="<%= @post.sit_up %>">回
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4 col-label">
+                        <label>3000m走：</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" name="run_min" class="col-8" value="<%= @post.run_min %>">分
+                    </div>
+                    <div class="col-4">
+                        <input type="number" name="run_sec" class="col-8" value="<%= @post.run_sec %>">秒
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                    <input type="submit" value="修　正" class="btn btn-primary">
+            </div>   
+            <% end %>
+
         </div>
+        
+        <%= link_to("戻る","/users/#{@current_user.id}", class: "btn btn-secondary") %>
+
     </div>
 </div>

@@ -1,34 +1,24 @@
-<div class="top-main">
-    <h1> posts/index </h1>
+<div class="posts-main">
+    <div class="container">
+        <h2>全ての目標・記録</h2>
 
-    <div class="targets">
-        <p>目標 <%= @targets.size %>件</p>
-        <% @targets.each do |target| %>
-        <div class="target">
-            <ul>
-                <li>
-                <h4><%=link_to(" #{target.date} の目標","/posts/#{target.id}") %></h4>
-                腕立て：<%= target.push_up %>回 <br>
-                腹筋： <%= target.sit_up %>回 <br>
-                3000m走： <%= target.run_min %>分<%= target.run_sec %>秒 <br>
-                </li>
-            </ul>
+        <img class="img-thumbnail" src="/assets/udetate_man.001.jpeg" alt="Thumbnail image">
+        <div class="targets">
+            <p class="targets-title">目標 <%= @targets.size %>件</p>
+            <% @targets.each do |target| %>
+            <div class="target">
+                    <h4><%=link_to(" #{target.date} の目標","/posts/#{target.id}") %></h4>
+            </div>
+            <% end %>
         </div>
-        <% end %>
-    </div>
-    <div class="records">
-        <p>記録 <%= @records.size %>件</p>
-        <% @records.each do |record| %>
-        <div class="record">
-            <ul>
-                <li>
-                <h4><%=link_to(" #{record.date} の記録","/posts/#{record.id}") %></h4>
-                腕立て： <%= record.push_up %>回<br>
-                腹筋：<%= record.sit_up %>回<br>
-                3000m走：<%= record.run_min %>分<%= record.run_sec %>秒<br>
-                </li>
-            </ul>
+        <div class="records">
+            <p class="targets-title">記録 <%= @records.size %>件</p>
+            <% @records.each do |record| %>
+            <div class="record">
+                    <h4><%=link_to(" #{record.date} の記録","/posts/#{record.id}") %></h4>
+            </div>
+            <% end %>
         </div>
-        <% end %>
+        <%= link_to("戻る","/users/#{@current_user.id}", class: "btn btn-secondary") %>
     </div>
 </div>

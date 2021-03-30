@@ -37,6 +37,17 @@
     }
 }
 
+.record-edit-card {
+    height: 200px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    p {
+        font-size: 20px;
+    }
+}
+
+
+
 .record-card {
     height: 170px;
     margin-top: 8px;
@@ -71,4 +82,12 @@ h6{
     .col-5 {
         text-align: right;
     }
+}
+
+.record-edit-container {
+    .col-5 {
+        text-align: right;
+    }
+
+    margin-bottom: 20px;
 }

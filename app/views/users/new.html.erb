@@ -1,23 +1,70 @@
-<div class="user-main users-new">
-  <div class="container">
-    <div class="form-heading"><h2>新規ユーザー登録</h2></div>
-    <div class="form users-form">
-      <div class="form-body">
-        <% @user.errors.full_messages.each do |message| %>
-          <div class="form-error">
-            <%= message %>
-          </div>
+<div class="user-main">
+    <div class="container">
+        <h2>新規ユーザー登録</h2>
+
+        <% @user.errors.full_messages.each do|message| %>
+            <div class="form-error">
+                <%= message %>
+            </div>
         <% end %>
-        
+        <div class="form-body">
         <%= form_tag("/users/create") do %>
-        <p>名前：<input type="text" name="name" value="" placeholder="久里浜　太郎"></p>
-        <p>パスワード：<input type="password" name="password" value=""></p><br>
-        <p>年齢：<input type="number" name="age" value="" placeholder="20">歳</p>
-        <p>身長：<input type="number" name="height" value="" placeholder="170">cm</p>
-        <p>体重：<input type="number" name="weight" value="" placeholder="60">kg</p>
-        <input type="submit" value="登録" class="btn btn-primary">
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-4 col-label">
+                    <label>名 前：</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" name="name" value="" placeholder="久里浜　太郎">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-4 col-label">
+                    <label>ﾊﾟｽﾜｰﾄﾞ：</label>
+                </div>
+                <div class="col-8">
+                    <input type="password" name="password" value="">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-4 col-label">
+                    <label>年 齢：</label>
+                </div>
+                <div class="col-8">
+                    <input type="number" name="age" value="" placeholder="20">歳
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-4 col-label">
+                    <label>身 長：</label>
+                </div>
+                <div class="col-8">
+                    <input type="number" name="height" value="" placeholder="170">cm
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-4 col-label">
+                    <label>体 重：</label>
+                </div>
+                <div class="col-8">
+                    <input type="number" name="weight" value="" placeholder="60">kg
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="登　録" class="btn btn-primary">
         <% end %>
-      </div>
+        </div>
+
+        <%= link_to("戻る","/", class: "btn btn-secondary") %>
+
     </div>
-  </div>
 </div>

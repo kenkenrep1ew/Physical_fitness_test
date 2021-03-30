@@ -1,11 +1,11 @@
 <div class="user-main">
     <div class="container">
-        <div class="user-card">
-            <h4><%= @user.name %></h4>
-            <p>年齢：<%= @user.age %>歳 / 身長：<%= @user.height %>cm / 体重：<%= @user.weight %>kg </p>
+        <div class="card user-card">
             <% if @current_user.id == @user.id %>
-            <%= link_to("ユーザ情報を修正する","/users/#{@user.id}/edit", class: "btn btn-secondary")%>
+            <%= link_to(@user.name,"/users/#{@user.id}/edit", class: "h4")%>
             <% end %>
+            <p>年齢：<%= @user.age %>歳 / 身長：<%= @user.height %>cm / 体重：<%= @user.weight %>kg </p>
+
         </div>
 
             
@@ -127,7 +127,7 @@
         </div>
 
         <div class="new-record">
-            <%= link_to("目標・記録を登録する","/users/#{@user.id}/edit", class: "btn btn-primary")%>
+            <%= link_to("目標・記録を登録する","/posts/new", class: "btn btn-primary")%>
         </div>
 
     </div>

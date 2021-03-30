@@ -67,3 +67,6 @@ gem 'rails-i18n'
 ### ADD FOR Bootstrap ###
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+
+### ADD FOR Boootswatch ###
+gem "bootswatch", github: "thomaspark/bootswatch"

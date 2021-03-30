@@ -14,6 +14,14 @@ ul, li {
 
 .home-main {
   margin-top: 87px;
+
+  text-align: center;
+}
+
+.about-main {
+  margin-top: 56px;
+
+  text-align: center;
 }
 
 .wrapper {
@@ -22,7 +30,7 @@ ul, li {
 
 /* フラッシュ ================================ */
 .flash {
-  padding: 5px 0;
+  padding: 4px 0;
   color: white;
   background: rgb(135, 173, 113);
   text-align: center;
@@ -35,6 +43,7 @@ ul, li {
 }
 
 footer {
+  margin-top: 5px;
   padding-top: 2px;
 
   text-align: right;
@@ -43,4 +52,8 @@ footer {
     font-size: 5px;
     margin-right: 10px;
   }
+}
+
+.row-name {
+  margin-top: 20px;
 }

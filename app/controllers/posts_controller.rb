@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   before_action :authenticate_user,{only: [:index, :update]}
   def index
-    @records = Post.where(is_record: true)
-    @targets = Post.where(is_record: false)
+    @records = Post.where(is_record: true, user_id: @current_user.id)
+    @targets = Post.where(is_record: false, user_id: @current_user.id)
   end
 
   def new
@@ -56,7 +56,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
-    redirect_to('/posts/index')
+    redirect_to("/users/#{@current_user.id}")
   end
 
   def record_or_target(is_record)
